@@ -29,8 +29,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#로컬앱>서드파티?>디폴트장고앱 순서
 INSTALLED_APPS = [
+    'articles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,11 +51,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_tutorial.urls'
-
+TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,9 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
