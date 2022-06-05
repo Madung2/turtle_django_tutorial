@@ -20,4 +20,6 @@ from articles import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
+    path('dinner/<str:name>/', views.dinner),
+    #변수명을 str인지 int인지 확인해줘야함, name을 받기로 했기 때문에 views에 name필요
 ]
